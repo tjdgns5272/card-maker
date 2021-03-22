@@ -3,6 +3,8 @@ import styles from './Maker.module.css';
 import {useHistory} from "react-router-dom";
 import Header from "../header/header";
 import Footer from "../footer/footer";
+import CardMaker from "../cardMaker/card_maker";
+import CardPreview from "../cardPreview/card_preview";
 
 const Maker = ({authService}) => {
     const history = useHistory();
@@ -23,7 +25,10 @@ const Maker = ({authService}) => {
                 <Header onLogout={onLogout}/>
             </div>
 
-            <div className={styles.body}>Maker</div>
+            <div className={styles.body}>
+                <CardMaker/>
+                <CardPreview/>
+            </div>
 
             <div className={styles.footer}>
                 <Footer/>

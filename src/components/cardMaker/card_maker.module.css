@@ -1,0 +1,7 @@
+@value makerGrey from '/src/common/colors.css';
+
+.card_maker {
+    border-right: 1px solid makerGrey;
+    width: 50%;
+    height: 100%;
+}
