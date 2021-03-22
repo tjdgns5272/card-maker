@@ -1,18 +1,22 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styles from './Maker.module.css';
-import {BrowserRouter as Route, Link, useHistory} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 import Header from "../header/header";
 import Footer from "../footer/footer";
 
 const Maker = ({authService}) => {
     const history = useHistory();
 
-    const onLogout = event => {
-        authService
-            .logout()
-            .then(console.log("You're Logged Out!"))
-            .then(() => history.push("/home"))
+    const onLogout = () => {
+        authService.logout();
     }
+    useEffect(() => {
+        authService.onAuthChange(user => {
+            if (!user) {
+                history.push('/')
+            }
+        })
+    })
     return (
         <section className={styles.maker}>
             <div className={styles.header}>

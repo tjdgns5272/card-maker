@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Header from "../header/header";
 import Footer from "../footer/footer";
 import styles from './login.module.css'
@@ -7,14 +7,24 @@ import {useHistory} from "react-router-dom";
 const Login = ({authService}) => {
 
     const history= useHistory();
+    const goToMaker = (userId) => {
+        history.push({
+            pathname: '/maker',
+            state: {id: userId}
+        })
+    }
     const onLogin = event => {
         authService
             .login(event.currentTarget.textContent)
-            .then(userObj => userObj.user.uid)
-            .then(console.log)
-            .then(console.log("You're Logged in!"))
-            .then( () => history.push("/maker"))
+            .then( (userId) => goToMaker(userId.user.uid))
     }
+
+    useEffect(() => {
+        authService
+            .onAuthChange(user => {
+                user && goToMaker(user.uid)
+            })
+    });
 
     return (
         <section className={styles.loginBox}>
