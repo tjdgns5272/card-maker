@@ -1,20 +1,24 @@
 import React from 'react';
-import Header from "./header";
-import Footer from "./footer";
+import Header from "../header/header";
+import Footer from "../footer/footer";
 import styles from './login.module.css'
+import {useHistory} from "react-router-dom";
 
 const Login = ({authService}) => {
+
+    const history= useHistory();
     const onLogin = event => {
         authService
             .login(event.currentTarget.textContent)
+            .then(userObj => userObj.user.uid)
             .then(console.log)
+            .then(console.log("You're Logged in!"))
+            .then( () => history.push("/maker"))
     }
-    const onLogout = event => {
 
-    }
     return (
         <section className={styles.loginBox}>
-            <Header onLogout={onLogout}/>
+            <Header />
             <section className={styles.login}>
                 <h1 className={styles.login_text}>Login</h1>
                 <ul className={styles.loginService}>

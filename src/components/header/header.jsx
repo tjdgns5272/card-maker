@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './header.module.css';
-
+import logo from './images/logo.png'
 const Header = ({onLogout}) => {
 
     return (
@@ -12,7 +12,7 @@ const Header = ({onLogout}) => {
                 </button>
                 )
             }
-            <img className={styles.logo} src="/images/logo.png" alt="logo"/>
+            <img className={styles.logo} src={logo} alt='logo'/>
             <h1 className={styles.title}>Business Card Maker</h1>
         </header>
     )
