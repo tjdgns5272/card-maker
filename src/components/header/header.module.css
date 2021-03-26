@@ -26,8 +26,8 @@
 .logout {
     font-size: 1rem;
     position: absolute;
-    right: 0.5em;
-    top: 0.5em;
+    right: 1em;
+    top: 1em;
     border-radius: 20%;
     height: 1.5rem;
     width: 4rem;

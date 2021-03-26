@@ -1,0 +1,10 @@
+.image_input {
+    font-size: 0.8rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.name {
+    width: 100%;
+    padding: 0.3rem;
+}
