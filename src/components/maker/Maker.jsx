@@ -8,17 +8,6 @@ import CardPreview from "../cardPreview/card_preview";
 
 const Maker = ({authService}) => {
     const history = useHistory();
-    const onLogout = () => {
-        authService.logout();
-    }
-    useEffect(() => {
-        authService.onAuthChange(user => {
-            if (!user) {
-                history.push('/')
-            }
-        })
-    })
-
     const [cards, setCards] = useState([
         {
             id: 1,
@@ -36,7 +25,7 @@ const Maker = ({authService}) => {
             name: 'Namq Ryu',
             company: 'Google',
             theme: 'Colorful',
-            occupation: 'Project Manager',
+            occupation: '조빱같은 Manager',
             email: 'skarb8277@gmial.com',
             memo: 'Noah is Back!',
             picName: 'Nooarhk',
@@ -49,13 +38,27 @@ const Maker = ({authService}) => {
             theme: 'Light',
             occupation: 'CEO',
             email: 'sod0318@hanmail.net',
-            memo: "I won't bite you :)",
-            picName: 'DG',
+            memo: "Teach me how to Doggy!",
+            picName: 'YDG',
             picURL: null
         }
     ]);
 
+    const onLogout = () => {
+        authService.logout();
+    }
+    useEffect(() => {
+        authService.onAuthChange(user => {
+            if (!user) {
+                history.push('/')
+            }
+        })
+    })
 
+    const addCard = (card) => {
+        const newCard = [...cards, card];
+        setCards(newCard);
+    }
     return (
         <section className={styles.maker}>
             <div className={styles.header}>
@@ -65,6 +68,7 @@ const Maker = ({authService}) => {
             <section className={styles.body}>
                 <CardMaker
                     cards={cards}
+                    addCard={addCard}
                 />
                 <CardPreview cards={cards}/>
             </section>

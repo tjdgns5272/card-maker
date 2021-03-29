@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './card_maker_form.module.css';
 import Button from "../button/button";
-import ImageInput from "../inputImage/ImageInput";
+import ImageInput from "../iamgeInput/ImageInput";
 
 const CardMakerForm = ({card}) => {
     const {
@@ -11,29 +11,28 @@ const CardMakerForm = ({card}) => {
         occupation,
         email,
         memo,
-        picName,
         picURL
     } = card;
-    const onSubmit = () => {
+    const handleDelete = () => {
 
     }
     return (
         <form className={styles.form}>
-            <input className={styles.input} type="text" name="name" value={name}/>
-            <input className={styles.input} type="text" name="company" value={company}/>
-            <select className={styles.theme} name="theme" value={theme}>
+            <input className={styles.input} type="text" name="name" value={name} onChange={() => {}}/>
+            <input className={styles.input} type="text" name="company" value={company} onChange={() => {}}/>
+            <select className={styles.theme} name="theme" value={theme} onChange={() => {}}>
                 <option value="Dark">Dark</option>
                 <option value="Light">Light</option>
                 <option value="Colorful">Colorful</option>
             </select>
-            <input className={styles.input} type="text" name="occupation" value={occupation}/>
-            <input className={styles.input} type="text" name="email" value={email}/>
-            <textarea className={styles.memo} name="memo" value={memo}/>
+            <input className={styles.input} type="text" name="occupation" value={occupation} onChange={() => {}}/>
+            <input className={styles.input} type="text" name="email" value={email} onChange={() => {}}/>
+            <textarea className={styles.memo} name="memo" value={memo} onChange={() => {}}/>
             <div className={styles.btnBox}>
                 <div className={styles.image_input}>
-                    <ImageInput name={name}/>
+                    <ImageInput name={name} onClick={handleDelete}/>
                 </div>
-                <Button name='Delete' onClick={onSubmit}/>
+                <Button name='Delete'/>
             </div>
         </form>
     )

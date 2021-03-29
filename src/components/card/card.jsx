@@ -10,7 +10,6 @@ const Card = ({card}) => {
         occupation,
         email,
         memo,
-        picName,
         picURL
     } = card;
     const url = picURL || DEFAULT_IMAGE;

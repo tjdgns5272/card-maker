@@ -1,0 +1,27 @@
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem;
+}
+
+.input, .theme {
+    flex: 1 1 30%;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.memo {
+    padding: 0.5rem;
+    height: 5rem;
+    flex: 1 1 100%;
+    font-size: 1em;
+}
+
+.image_input {
+    flex: 1 1 50%;
+}
+
+.btnBox {
+    width: 100%;
+    display: flex;
+}
