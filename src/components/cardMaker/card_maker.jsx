@@ -9,10 +9,10 @@ const CardMaker = ({cards, addCard, onDelete, handleChange}) => {
             <h1>Card Maker</h1>
             <section className={styles.userInfo}>
                 {
-                    cards.map(card =>
+                    Object.keys(cards).map(key =>
                         <CardMakerForm
-                            key={card.id}
-                            card={card}
+                            key={key}
+                            card={cards[key]}
                             onDelete={onDelete}
                             handleChange={handleChange}
                         />

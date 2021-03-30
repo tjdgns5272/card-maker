@@ -8,10 +8,10 @@ const CardPreview = ({cards}) => {
             <h1 className={styles.title}>Card Preview</h1>
             <ul className={styles.userInfo}>
                 {
-                    cards.map(card =>
+                    Object.keys(cards).map(key =>
                         <Card
-                            key={card.id}
-                            card={card}
+                            key={key}
+                            card={cards[key]}
                         />
                     )
                 }
