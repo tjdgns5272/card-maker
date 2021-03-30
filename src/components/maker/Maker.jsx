@@ -54,7 +54,6 @@ const Maker = ({authService}) => {
             }
         })
     })
-
     const addCard = (card) => {
         const newCard = [...cards, card];
         setCards(newCard);
