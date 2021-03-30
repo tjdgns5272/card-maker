@@ -64,12 +64,12 @@ const Maker = ({authService}) => {
         setCards(updated);
     }
     const onChange = (card) => {
-        const modifiedCards = cards.map(item => {
+        /*const modifiedCards = cards.map(item => {
             if (card.defaultValue === item[`${card.name}`]) {
                 return {...item, [card.name]: card.value}
             } return item
         })
-        setCards(modifiedCards);
+        setCards(modifiedCards);*/
     };
 
     return (
