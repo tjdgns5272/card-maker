@@ -63,12 +63,19 @@ const Maker = ({authService}) => {
         setCards(updated);
     }
     const onChange = (card) => {
+        const update = cards.map(item => {
+            if (card.id === item.id) {
+                return {...card}
+            } return item
+        })
+        setCards(update)
+        /*
         const modifiedCards = cards.map(item => {
             if (card.defaultValue === item[`${card.name}`]) {
                 return {...item, [card.name]: card.value}
             } return item
         })
-        setCards(modifiedCards);
+        setCards(modifiedCards);*/
     };
 
     return (
