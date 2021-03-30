@@ -59,6 +59,19 @@ const Maker = ({authService}) => {
         const newCard = [...cards, card];
         setCards(newCard);
     }
+    const deleteCard = (card) => {
+        const updated = cards.filter(list => list.id !== card.id)
+        setCards(updated);
+    }
+    const onChange = (card) => {
+        const modifiedCards = cards.map(item => {
+            if (card.defaultValue === item[`${card.name}`]) {
+                return {...item, [card.name]: card.value}
+            } return item
+        })
+        setCards(modifiedCards);
+    };
+
     return (
         <section className={styles.maker}>
             <div className={styles.header}>
@@ -69,6 +82,8 @@ const Maker = ({authService}) => {
                 <CardMaker
                     cards={cards}
                     addCard={addCard}
+                    onDelete={deleteCard}
+                    handleChange={onChange}
                 />
                 <CardPreview cards={cards}/>
             </section>

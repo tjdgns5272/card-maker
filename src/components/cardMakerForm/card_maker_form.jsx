@@ -3,7 +3,7 @@ import styles from './card_maker_form.module.css';
 import Button from "../button/button";
 import ImageInput from "../iamgeInput/ImageInput";
 
-const CardMakerForm = ({card}) => {
+const CardMakerForm = ({card, onDelete, handleChange}) => {
     const {
         name,
         company,
@@ -13,26 +13,36 @@ const CardMakerForm = ({card}) => {
         memo,
         picURL
     } = card;
-    const handleDelete = () => {
-
+    const handleDelete = (event) => {
+        event.preventDefault();
+        onDelete(card)
     }
+
+
+
+    const onChange = (event) => {
+        event.preventDefault()
+        const {name, value, defaultValue} = event.currentTarget
+        handleChange({name, value, defaultValue})
+    }
+
     return (
         <form className={styles.form}>
-            <input className={styles.input} type="text" name="name" value={name} onChange={() => {}}/>
-            <input className={styles.input} type="text" name="company" value={company} onChange={() => {}}/>
-            <select className={styles.theme} name="theme" value={theme} onChange={() => {}}>
+            <input className={styles.input} type="text" name="name" defaultValue={name} onChange={onChange}/>
+            <input className={styles.input} type="text" name="company" defaultValue={company} onChange={onChange}/>
+            <select className={styles.theme} name="theme" defaultValue={theme} onChange={onChange}>
                 <option value="Dark">Dark</option>
                 <option value="Light">Light</option>
                 <option value="Colorful">Colorful</option>
             </select>
-            <input className={styles.input} type="text" name="occupation" value={occupation} onChange={() => {}}/>
-            <input className={styles.input} type="text" name="email" value={email} onChange={() => {}}/>
-            <textarea className={styles.memo} name="memo" value={memo} onChange={() => {}}/>
+            <input className={styles.input} type="text" name="occupation" defaultValue={occupation} onChange={onChange}/>
+            <input className={styles.input} type="text" name="email" defaultValue={email} onChange={onChange}/>
+            <textarea className={styles.memo} name="memo" defaultValue={memo} onChange={onChange}/>
             <div className={styles.btnBox}>
                 <div className={styles.image_input}>
-                    <ImageInput name={name} onClick={handleDelete}/>
+                    <ImageInput name={name} />
                 </div>
-                <Button name='Delete'/>
+                <Button name='Delete' onClick={handleDelete}/>
             </div>
         </form>
     )

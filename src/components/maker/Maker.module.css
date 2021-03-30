@@ -1,5 +1,6 @@
-@value makerWhite from '/src/common/colors.css';
+@value makerWhite, makerBlack from '/src/common/colors.css';
 @value mediaQuery from '/src/common/size.css';
+
 
 .maker {
     display: flex;
