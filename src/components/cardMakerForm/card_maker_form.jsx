@@ -17,8 +17,6 @@ const CardMakerForm = ({card, onDelete, handleChange}) => {
         onDelete(card)
     }
 
-
-
     const onChange = (event) => {
         event.preventDefault()
         const {name, value} = event.currentTarget
