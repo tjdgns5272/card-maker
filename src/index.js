@@ -4,12 +4,18 @@ import './index.css';
 import App from './app';
 import '@fortawesome/fontawesome-free/js/all.js';
 import AuthService from "./service/auth_service";
+import ImageUploader from "./service/image_uploader";
+import ImageInput from "./components/imageInput/ImageInput";
 
 const authService = new AuthService();
+const imageUploader = new ImageUploader();
 
+const FileInput = (props) => (
+    <ImageInput {...props} imageUploader={imageUploader}/>
+)
 ReactDOM.render(
   <React.StrictMode>
-    <App authService={authService}/>
+    <App FileInput={FileInput} authService={authService}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

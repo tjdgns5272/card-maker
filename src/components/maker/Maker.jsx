@@ -6,7 +6,7 @@ import Footer from "../footer/footer";
 import CardMaker from "../cardMaker/card_maker";
 import CardPreview from "../cardPreview/card_preview";
 
-const Maker = ({authService}) => {
+const Maker = ({FileInput, authService}) => {
     const history = useHistory();
     const [cards, setCards] = useState({
             '1':
@@ -93,6 +93,7 @@ const Maker = ({authService}) => {
 
             <section className={styles.body}>
                 <CardMaker
+                    FileInput={FileInput}
                     cards={cards}
                     addCard={addOrUpdateCard}
                     onDelete={deleteCard}

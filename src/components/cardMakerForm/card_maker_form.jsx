@@ -1,9 +1,8 @@
 import React from 'react';
 import styles from './card_maker_form.module.css';
 import Button from "../button/button";
-import ImageInput from "../iamgeInput/ImageInput";
 
-const CardMakerForm = ({card, onDelete, handleChange}) => {
+const CardMakerForm = ({FileInput, card, onDelete, handleChange}) => {
     const {
         name,
         company,
@@ -37,7 +36,7 @@ const CardMakerForm = ({card, onDelete, handleChange}) => {
             <textarea className={styles.memo} name="memo" defaultValue={memo} onChange={onChange}/>
             <div className={styles.btnBox}>
                 <div className={styles.image_input}>
-                    <ImageInput name={name} />
+                   <FileInput />
                 </div>
                 <Button name='Delete' onClick={handleDelete}/>
             </div>

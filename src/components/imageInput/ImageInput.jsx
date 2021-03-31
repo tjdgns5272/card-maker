@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './ImageInput.module.css';
 
-const ImageInput = ({name}) => {
+const ImageInput = ({FileInput, name}) => {
     return (
         <div className={styles.image_input}>
-            <button  className={styles.name}>{name}</button>
+            <button  className={styles.name}>{FileInput}</button>
         </div>
     )
 };
