@@ -12,10 +12,10 @@ const Card = ({card}) => {
         memo,
         picURL
     } = card;
-    const url = picURL || DEFAULT_IMAGE;
+    const URL = picURL || DEFAULT_IMAGE;
     return (
         <li className={`${styles.card} ${getStyles(theme)}`}>
-            <img className={styles.avatar} src={process.env.PUBLIC_URL + url} alt="profile photo"/>
+            <img className={styles.avatar} src={process.env.PUBLIC_URL + URL} alt="profile photo"/>
             <div className={styles.info}>
                 <h1 className={styles.name}>{name}</h1>
                 <p className={styles.company}>{company}</p>

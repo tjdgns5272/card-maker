@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './card_maker_form.module.css';
+import styles from './card_edit_form.module.css';
 import Button from "../button/button";
 
-const CardMakerForm = ({FileInput, card, onDelete, handleChange}) => {
+const CardEditForm = ({FileInput, card, onDelete, handleChange}) => {
     const {
         name,
         company,
@@ -15,13 +15,19 @@ const CardMakerForm = ({FileInput, card, onDelete, handleChange}) => {
         event.preventDefault();
         onDelete(card)
     }
-
+    const onFileChange = file => {
+        console.log(file)
+        handleChange({
+            ...card,
+            picName: file.name,
+            picURL: file.url,
+        })
+    };
     const onChange = (event) => {
         event.preventDefault()
         const {name, value} = event.currentTarget
         handleChange({...card, [name]: value})
     }
-
     return (
         <form className={styles.form}>
             <input className={styles.input} type="text" name="name" defaultValue={name} onChange={onChange}/>
@@ -36,7 +42,7 @@ const CardMakerForm = ({FileInput, card, onDelete, handleChange}) => {
             <textarea className={styles.memo} name="memo" defaultValue={memo} onChange={onChange}/>
             <div className={styles.btnBox}>
                 <div className={styles.image_input}>
-                   <FileInput />
+                   <FileInput name={card.picName} onFileChange={onFileChange}/>
                 </div>
                 <Button name='Delete' onClick={handleDelete}/>
             </div>
@@ -44,4 +50,4 @@ const CardMakerForm = ({FileInput, card, onDelete, handleChange}) => {
     )
 };
 
-export default CardMakerForm;
+export default CardEditForm;

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './card_maker.module.css';
-import CardMakerForm from "../cardMakerForm/card_maker_form";
-import InputForm from "../inputForm/input_form";
+import CardEditForm from "../cardEditForm/card_edit_form";
+import CardAddForm from "../cardAddForm/card_add_form";
 
 const CardMaker = ({FileInput, cards, addCard, onDelete, handleChange}) => {
     return (
@@ -10,7 +10,7 @@ const CardMaker = ({FileInput, cards, addCard, onDelete, handleChange}) => {
             <section className={styles.userInfo}>
                 {
                     Object.keys(cards).map(key =>
-                        <CardMakerForm
+                        <CardEditForm
                             key={key}
                             FileInput={FileInput}
                             card={cards[key]}
@@ -20,7 +20,7 @@ const CardMaker = ({FileInput, cards, addCard, onDelete, handleChange}) => {
                     )
                 }
             </section>
-            <InputForm FileInput={FileInput} onAdd={addCard}/>
+            <CardAddForm FileInput={FileInput} onAdd={addCard}/>
         </section>
     )
 };

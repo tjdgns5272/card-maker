@@ -18,7 +18,7 @@ const Maker = ({FileInput, authService}) => {
                     occupation: 'Senior Developer',
                     email: 'tjdgns5272@naver.com',
                     memo: 'Cease the day :)',
-                    picName: 'SH',
+                    picName: null,
                     picURL: null
                 },
             '2':
@@ -30,7 +30,7 @@ const Maker = ({FileInput, authService}) => {
                     occupation: '조빱같은 Manager',
                     email: 'skarb8277@gmial.com',
                     memo: 'Noah is Back!',
-                    picName: 'Nooarhk',
+                    picName: null,
                     picURL: null
                 }
             ,
@@ -43,7 +43,7 @@ const Maker = ({FileInput, authService}) => {
                     occupation: 'CEO',
                     email: 'sod0318@hanmail.net',
                     memo: "Teach me how to Doggy!",
-                    picName: 'YDG',
+                    picName: null,
                     picURL: null
                 }
         })

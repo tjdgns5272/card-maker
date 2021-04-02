@@ -5,13 +5,13 @@ import App from './app';
 import '@fortawesome/fontawesome-free/js/all.js';
 import AuthService from "./service/auth_service";
 import ImageUploader from "./service/image_uploader";
-import ImageInput from "./components/imageInput/ImageInput";
+import ImageFileInput from "./components/imageFileInput/Image_file_input";
 
 const authService = new AuthService();
 const imageUploader = new ImageUploader();
 
 const FileInput = (props) => (
-    <ImageInput {...props} imageUploader={imageUploader}/>
+    <ImageFileInput {...props}  imageUploader={imageUploader} />
 )
 ReactDOM.render(
   <React.StrictMode>
@@ -19,3 +19,4 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+

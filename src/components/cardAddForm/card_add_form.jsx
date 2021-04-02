@@ -1,9 +1,9 @@
-import React, {useRef} from 'react';
-import styles from './input_form.module.css'
+import React, {useRef, useState} from 'react';
+import styles from './card_add_form.module.css'
 import Button from "../button/button";
 
 
-const InputForm = ({FileInput, name, onAdd}) => {
+const CardAddForm = ({FileInput, name, onAdd}) => {
     const formRef = useRef();
     const nameRef = useRef();
     const companyRef = useRef();
@@ -11,6 +11,7 @@ const InputForm = ({FileInput, name, onAdd}) => {
     const occupationRef = useRef();
     const emailRef = useRef();
     const memoRef = useRef();
+    const [file, setFile] = useState({ picName: null, picURL: null});
 
     const onSubmit = (event) => {
         event.preventDefault();
@@ -22,14 +23,20 @@ const InputForm = ({FileInput, name, onAdd}) => {
             occupation: occupationRef.current.value || '',
             email: emailRef.current.value || '',
             memo: memoRef.current.value || '',
-            picName: '',
-            picURL: '',
+            picName: file.picName || '',
+            picURL: file.picURL || '',
         }
         formRef.current.reset();
+        setFile({picName: null, picURL: null})
         onAdd(card);
     };
-
-    const picURL = name || 'No File'
+    const onFileChange = (file) => {
+        setFile({
+            picName: file.name,
+            picURL: file.url,
+        })
+        file.name = '';
+    }
     return (
         <form ref={formRef} className={styles.form}>
             <input ref={nameRef}
@@ -66,7 +73,7 @@ const InputForm = ({FileInput, name, onAdd}) => {
                       placeholder="memo"/>
             <div className={styles.btnBox}>
                 <div className={styles.image_input}>
-                    <FileInput />
+                    <FileInput name={file.picName} onFileChange={onFileChange}/>
                 </div>
                 <Button name='Add' onClick={onSubmit}/>
             </div>
@@ -74,4 +81,4 @@ const InputForm = ({FileInput, name, onAdd}) => {
     )
 };
 
-export default InputForm;
+export default CardAddForm;
