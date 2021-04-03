@@ -7,47 +7,9 @@ import CardMaker from "../cardMaker/card_maker";
 import CardPreview from "../cardPreview/card_preview";
 
 const Maker = ({FileInput, authService}) => {
+
     const history = useHistory();
-    const [cards, setCards] = useState({
-            '1':
-                {
-                    id: 1,
-                    name: 'Seonghun Park',
-                    company: 'Facebook',
-                    theme: 'Dark',
-                    occupation: 'Senior Developer',
-                    email: 'tjdgns5272@naver.com',
-                    memo: 'Cease the day :)',
-                    picName: null,
-                    picURL: null
-                },
-            '2':
-                {
-                    id: 2,
-                    name: 'Namq Ryu',
-                    company: 'Google',
-                    theme: 'Colorful',
-                    occupation: '조빱같은 Manager',
-                    email: 'skarb8277@gmial.com',
-                    memo: 'Noah is Back!',
-                    picName: null,
-                    picURL: null
-                }
-            ,
-            '3':
-                {
-                    id: 3,
-                    name: 'Dragon Doggy',
-                    company: 'KEPCO ',
-                    theme: 'Light',
-                    occupation: 'CEO',
-                    email: 'sod0318@hanmail.net',
-                    memo: "Teach me how to Doggy!",
-                    picName: null,
-                    picURL: null
-                }
-        })
-    ;
+    const [cards, setCards] = useState({});
 
     const onLogout = () => {
         authService.logout();
