@@ -6,31 +6,61 @@ import Footer from "../footer/footer";
 import CardMaker from "../cardMaker/card_maker";
 import CardPreview from "../cardPreview/card_preview";
 
-const Maker = ({FileInput, authService}) => {
+const Maker = ({FileInput, authService, cardRepository}) => {
+
+    const historyState = useHistory().state;
+    const [cards, setCards] = useState({});
+    const [userId, setUserId] = useState(historyState && historyState.id);
 
     const history = useHistory();
-    const [cards, setCards] = useState({});
-
     const onLogout = () => {
         authService.logout();
     }
+   useEffect(() => {
+       if (!userId) {
+           return;
+       }
+       const stopSync = cardRepository.syncCards(userId, cards => {
+           setCards(cards);
+       })
+       return () => stopSync();
+   }, [userId]);
+
+    //Login
     useEffect(() => {
         authService.onAuthChange(user => {
-            if (!user) {
+            if (user) {
+                setUserId(user.uid);
+            } else {
                 history.push('/')
             }
         })
     })
     const deleteCard = (card) => {
+        setCards( cards => {
+            const updated = { ...cards };
+            delete updated[card.id];
+            return updated;
+        })
+        cardRepository.removeCard(userId, card);
+/*
         const updated = {...cards};
         delete updated[card.id];
         setCards(updated)
+*/
     }
     const addOrUpdateCard = (card) => {
+        setCards(cards => {
+            const updated = { ...cards};
+            updated[card.id] = card;
+            return updated;
+        });
+        cardRepository.saveCard(userId, card);
+/*
         const updated = {...cards};
         updated[card.id] = card;
         setCards(updated)
-
+*/
     };
     /*const update = cards.map(item => {
         if (card.id === item.id) {
