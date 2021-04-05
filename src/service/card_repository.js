@@ -1,8 +1,8 @@
-import firebaseApp from "./firebase";
+import { firebaseDataBase } from "./firebase";
 
 class CardRepository {
     syncCards(userId, onUpdate) {
-        const ref = firebaseApp.database().ref(`${userId}/cards`);
+        const ref =firebaseDataBase.ref(`${userId}/cards`);
         ref.on('value', snapshot => {
             const value = snapshot.val();
             value && onUpdate(value);
@@ -12,12 +12,12 @@ class CardRepository {
 
 
     saveCard(userId, card) {
-        firebaseApp.database().ref(`${userId}/cards/${card.id}`).set(card);
+       firebaseDataBase.ref(`${userId}/cards/${card.id}`).set(card);
         //https://firebase.google.com/docs/database/web/read-and-write 참조
     }
 
     removeCard(userId, card) {
-        firebaseApp.database().ref(`${userId}/cards/${card.id}`).remove();
+       firebaseDataBase.ref(`${userId}/cards/${card.id}`).remove();
     }
 }
 

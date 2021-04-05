@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import Header from "../header/header";
 import Footer from "../footer/footer";
 import styles from './login.module.css'
@@ -19,12 +19,12 @@ const Login = ({authService}) => {
             .then( (userId) => goToMaker(userId.user.uid))
     }
 
-    useEffect(() => {
+/*    useEffect(() => {
         authService
             .onAuthChange(user => {
                 user && goToMaker(user.uid)
             })
-    });
+    });*/
 
     return (
         <section className={styles.loginBox}>
