@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {memo} from 'react';
 import styles from './card_edit_form.module.css';
 import Button from "../button/button";
 
-const CardEditForm = ({FileInput, card, onDelete, handleChange}) => {
+const CardEditForm = memo(({FileInput, card, onDelete, handleChange}) => {
     const {
         name,
         company,
@@ -42,12 +42,12 @@ const CardEditForm = ({FileInput, card, onDelete, handleChange}) => {
             <textarea className={styles.memo} name="memo" defaultValue={memo} onChange={onChange}/>
             <div className={styles.btnBox}>
                 <div className={styles.image_input}>
-                   <FileInput name={card.picName} onFileChange={onFileChange}/>
+                    <FileInput name={card.picName} onFileChange={onFileChange}/>
                 </div>
                 <Button name='Delete' onClick={handleDelete}/>
             </div>
         </form>
     )
-};
+});
 
 export default CardEditForm;

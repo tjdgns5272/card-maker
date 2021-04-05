@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from './card.module.css';
 
-const DEFAULT_IMAGE = '/default_logo.png'
+
+const DEFAULT_IMAGE = '/images/default_logo.png'
 const Card = ({card}) => {
     const {
         name,
@@ -12,10 +13,9 @@ const Card = ({card}) => {
         memo,
         picURL
     } = card;
-    const URL = picURL || DEFAULT_IMAGE;
     return (
         <li className={`${styles.card} ${getStyles(theme)}`}>
-            <img className={styles.avatar} src={process.env.PUBLIC_URL + URL} alt="profile"/>
+            <img className={styles.avatar} src={picURL? picURL : process.env.PUBLIC_URL + DEFAULT_IMAGE} alt="profile"/>
             <div className={styles.info}>
                 <h1 className={styles.name}>{name}</h1>
                 <p className={styles.company}>{company}</p>
