@@ -15,7 +15,7 @@ function App({FileInput, authService, cardRepository}) {
         <div className={styles.app}>
             <Router>
                 <Switch>
-                    <Route exact path={['/', '/home']}>
+                    <Route exact path={['/']}>
                         <Login authService={authService}/>
                     </Route>
                     <Route path="/maker">
