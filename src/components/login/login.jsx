@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from "../header/header";
 import Footer from "../footer/footer";
-import styles from './login.module.css'
+import styles from './login.module.css';
 import {useHistory} from "react-router-dom";
 
 const Login = ({authService}) => {
@@ -17,15 +17,14 @@ const Login = ({authService}) => {
         authService
             .login(event.currentTarget.textContent)
             .then( (userId) => goToMaker(userId.user.uid))
+            console.log(history)
     }
-
 /*    useEffect(() => {
         authService
             .onAuthChange(user => {
                 user && goToMaker(user.uid)
             })
     });*/
-
     return (
         <section className={styles.loginBox}>
             <Header />
