@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/card-maker/static/css/main.763b219e.chunk.css",
-    "main.js": "/card-maker/static/js/main.61ddab52.chunk.js",
-    "main.js.map": "/card-maker/static/js/main.61ddab52.chunk.js.map",
+    "main.css": "/card-maker/static/css/main.f5e16b42.chunk.css",
+    "main.js": "/card-maker/static/js/main.06abe78a.chunk.js",
+    "main.js.map": "/card-maker/static/js/main.06abe78a.chunk.js.map",
     "runtime-main.js": "/card-maker/static/js/runtime-main.632abbb7.js",
     "runtime-main.js.map": "/card-maker/static/js/runtime-main.632abbb7.js.map",
-    "static/js/2.3ca305f4.chunk.js": "/card-maker/static/js/2.3ca305f4.chunk.js",
-    "static/js/2.3ca305f4.chunk.js.map": "/card-maker/static/js/2.3ca305f4.chunk.js.map",
+    "static/js/2.1dc32c33.chunk.js": "/card-maker/static/js/2.1dc32c33.chunk.js",
+    "static/js/2.1dc32c33.chunk.js.map": "/card-maker/static/js/2.1dc32c33.chunk.js.map",
     "index.html": "/card-maker/index.html",
-    "static/css/main.763b219e.chunk.css.map": "/card-maker/static/css/main.763b219e.chunk.css.map",
-    "static/js/2.3ca305f4.chunk.js.LICENSE.txt": "/card-maker/static/js/2.3ca305f4.chunk.js.LICENSE.txt"
+    "static/css/main.f5e16b42.chunk.css.map": "/card-maker/static/css/main.f5e16b42.chunk.css.map",
+    "static/js/2.1dc32c33.chunk.js.LICENSE.txt": "/card-maker/static/js/2.1dc32c33.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.632abbb7.js",
-    "static/js/2.3ca305f4.chunk.js",
-    "static/css/main.763b219e.chunk.css",
-    "static/js/main.61ddab52.chunk.js"
+    "static/js/2.1dc32c33.chunk.js",
+    "static/css/main.f5e16b42.chunk.css",
+    "static/js/main.06abe78a.chunk.js"
   ]
 }
