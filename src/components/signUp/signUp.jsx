@@ -1,5 +1,5 @@
 import React, {useState, useRef} from 'react';
-import {Link, useHistory} from 'react-router-dom';
+import { useHistory} from 'react-router-dom';
 import styles from './signUp.module.css';
 import Header from "../header/header";
 import Footer from "../footer/footer";
@@ -14,7 +14,7 @@ const SignUp = ({authService}) => {
     const history = useHistory();
 
     const goToLogin = () => {
-        history.push('/login')
+        history.push('/')
     }
     const handleChange = (event) => {
         const type = event.target.name;

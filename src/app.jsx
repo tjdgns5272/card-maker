@@ -17,10 +17,10 @@ function App({FileInput, authService, cardRepository}) {
             <Router>
                 <Switch>
                     <Route exact path={['/', '/home']}>
-                        <SignUp authService={authService}/>
-                    </Route>
-                    <Route path="/login">
                         <Login authService={authService}/>
+                    </Route>
+                    <Route path="/signup">
+                        <SignUp authService={authService}/>
                     </Route>
                     <Route path="/maker">
                         <Maker FileInput={FileInput} authService={authService} cardRepository={cardRepository}/>

@@ -30,6 +30,7 @@
     width: 100%;
     border: 1px solid makerLightGrey;
     border-radius: 1rem;
+    cursor: pointer;
     color: makerWhite;
     font-weight: bold;
     font-size: 0.7rem;
@@ -63,6 +64,7 @@
     cursor: pointer;
     color: makerGreen;
     font-weight: bold;
+    outline: none;
 }
 
 .footer {
