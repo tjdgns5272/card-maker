@@ -50,6 +50,7 @@
     font-size: 0.6rem;
     border: 1px solid makerGrey;
     padding: 0.7rem;
+    outline: none;
 }
 .login_button {
     width: 100%;
@@ -81,7 +82,6 @@
 .email_login {
     padding: 1rem;
     width: 50%;
-
 }
 
 .social_login {

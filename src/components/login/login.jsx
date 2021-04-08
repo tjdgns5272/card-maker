@@ -25,6 +25,9 @@ const Login = ({authService}) => {
     const handleChange = () => {
 
     }
+    const onEmailLogin = () => {
+
+    }
 
     /*    useEffect(() => {
             authService
@@ -37,7 +40,7 @@ const Login = ({authService}) => {
             <Header/>
             <section className={styles.login}>
                 <h1 className={styles.login_text}>Login</h1>
-                <section className={styles.login_service}>
+                <form className={styles.login_service} onSubmit={onEmailLogin}>
                     <ul className={styles.email_login}>
                         <div className={styles.input_login}>
                             <input
@@ -70,7 +73,7 @@ const Login = ({authService}) => {
                             Github
                         </button>
                     </ul>
-                </section>
+                </form>
             </section>
             <Footer/>
         </section>

@@ -1,6 +1,8 @@
 import React, {useState, useRef} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 import styles from './signUp.module.css';
+import Header from "../header/header";
+import Footer from "../footer/footer";
 
 const SignUp = ({authService}) => {
 
@@ -16,10 +18,10 @@ const SignUp = ({authService}) => {
     }
     const handleChange = (event) => {
         const type = event.target.name;
-        if( type === 'email') {
+        if (type === 'email') {
             const inputEmail = event.target.value;
             setEmail(inputEmail);
-        } else if ( type === 'password') {
+        } else if (type === 'password') {
             const inputPassword = event.target.value;
             setPassword(inputPassword);
         }
@@ -35,15 +37,18 @@ const SignUp = ({authService}) => {
 
     return (
         <section className={styles.container}>
-            <h1 className={styles.title}>Sign Up</h1>
+            <Header/>
+            <h1 className={styles.signup_text}>Sign up here!</h1>
             <form ref={formRef} className={styles.form} onSubmit={onSignUp}>
                 <input
+                    className={styles.input}
                     type="text"
                     placeholder="Email"
                     name="email"
                     onChange={handleChange}
                 />
                 <input
+                    className={styles.input}
                     type="text"
                     placeholder="Password"
                     name="password"
@@ -53,8 +58,19 @@ const SignUp = ({authService}) => {
                     className={styles.submit}
                     name='Submit'
                     onClick={onSignUp}
-                />
+                >
+                    Submit
+                </button>
             </form>
+            <div className={styles.login}>
+                <div className={styles.login_text}>Already have account?</div>
+                <button className={styles.sign_in} onClick={goToLogin}>Log in</button>
+            </div>
+
+            <div className={styles.footer}>
+                <Footer/>
+
+            </div>
         </section>
     )
 
