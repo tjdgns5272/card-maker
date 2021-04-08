@@ -3,6 +3,7 @@ import './app.module.css';
 import Login from "./components/login/login";
 import styles from './app.module.css';
 import Maker from "./components/maker/Maker";
+import SignUp from "./components/signUp/signUp";
 import {
     BrowserRouter as Router,
     Switch,
@@ -15,8 +16,11 @@ function App({FileInput, authService, cardRepository}) {
         <div className={styles.app}>
             <Router>
                 <Switch>
-                    <Route exact path={['/']}>
+                    <Route exact path={['/', '/home']}>
                         <Login authService={authService}/>
+                    </Route>
+                    <Route path="/signup">
+                        <SignUp authService={authService}/>
                     </Route>
                     <Route path="/maker">
                         <Maker FileInput={FileInput} authService={authService} cardRepository={cardRepository}/>

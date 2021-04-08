@@ -1,0 +1,72 @@
+@value makerWhite, makerGreen, makerGrey, makerLightGrey from '/src/common/colors.css';
+
+.container {
+    width: 40em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: makerWhite;
+}
+
+.signup_text {
+    font-size: 2em;
+    margin: 0;
+    padding: 0.5em;
+}
+
+.input {
+    margin: 0.2rem 0;
+    width: 100%;
+    height: 2em;
+    border-radius: 1rem;
+    font-size: 0.6rem;
+    border: 1px solid makerGrey;
+    padding: 0.7rem;
+    outline: none;
+}
+.submit {
+    width: 100%;
+    border: 1px solid makerLightGrey;
+    border-radius: 1rem;
+    cursor: pointer;
+    color: makerWhite;
+    font-weight: bold;
+    font-size: 0.7rem;
+    padding: 0.3rem;
+    background-color: darkseagreen;
+}
+.form::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: makerLightGrey;
+    transform: translateY(0.7em);
+}
+
+.login {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: left;
+}
+
+.login_text {
+    font-size: 0.6rem;
+    color: makerGrey;
+}
+
+.sign_in {
+    border-style: none;
+    background-color: white;
+    cursor: pointer;
+    color: makerGreen;
+    font-weight: bold;
+    outline: none;
+}
+
+.footer {
+    width: 100%;
+}
