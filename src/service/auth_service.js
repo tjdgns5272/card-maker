@@ -18,6 +18,7 @@ class AuthService {
             onUserChanged(user)
         });
     }
+
     logout() {
         return firebaseAuth.signOut();
     }
