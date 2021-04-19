@@ -31,7 +31,7 @@ class AuthService {
             case 'Facebook':
                 return facebookProvider;
             default:
-                throw new Error (`not supported provider : ${providerName}`);
+                 throw new Error (`not supported provider : ${providerName}`);
         }
     }
 }
