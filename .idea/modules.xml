@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$USER_HOME$/Downloads/js-basics-70a22849f56ed53fd85236669504c6aadf461124/.idea/js-basics-70a22849f56ed53fd85236669504c6aadf461124.iml" filepath="$USER_HOME$/Downloads/js-basics-70a22849f56ed53fd85236669504c6aadf461124/.idea/js-basics-70a22849f56ed53fd85236669504c6aadf461124.iml" />
+      <module fileurl="file://$USER_HOME$/git/skatch-web/.idea/skatch-web.iml" filepath="$USER_HOME$/git/skatch-web/.idea/skatch-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/template.iml" filepath="$PROJECT_DIR$/.idea/template.iml" />
     </modules>
   </component>

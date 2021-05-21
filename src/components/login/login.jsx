@@ -33,7 +33,6 @@ const Login = ({authService}) => {
         authService
             .signIn(email.trim(), password)
             .then((userId) => goToMaker(userId.user.uid))
-
     }
 
     const handleOnChange = (event) => {
